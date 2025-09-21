@@ -1,0 +1,7 @@
+{
+  "template": "🤖 Boilerplate Generator | {model} | {progress}",
+  "showProgress": true,
+  "showModel": true,
+  "progressFormat": "short",
+  "refreshInterval": 5000
+}

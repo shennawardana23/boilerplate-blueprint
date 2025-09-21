@@ -1,0 +1,39 @@
+{
+  "name": "boilerplate-blueprint-frontend",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
+    "test": "mocha --require jsdom-global/register test/**/*.test.js",
+    "test:watch": "mocha --watch --require jsdom-global/register test/**/*.test.js"
+  },
+  "dependencies": {
+    "@headlessui/vue": "^1.7.16",
+    "@heroicons/vue": "^2.0.18",
+    "axios": "^1.6.2",
+    "pinia": "^2.1.7",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.18",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/test-utils": "^2.4.6",
+    "autoprefixer": "^10.4.16",
+    "chai": "^6.0.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-vue": "^9.19.2",
+    "jsdom": "^27.0.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^11.7.2",
+    "postcss": "^8.4.32",
+    "sinon": "^21.0.0",
+    "tailwindcss": "^3.3.6",
+    "vite": "^5.4.20",
+    "vue-loader": "^17.4.2"
+  }
+}

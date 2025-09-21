@@ -1,0 +1,55 @@
+service: boilerplate-blueprint
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: go1.x
+  region: ${opt:region, 'us-east-1'}
+  stage: ${opt:stage, 'dev'}
+  memorySize: 1024
+  timeout: 30
+  environment:
+    GIN_MODE: release
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - logs:CreateLogGroup
+            - logs:CreateLogStream
+            - logs:PutLogEvents
+          Resource: "*"
+
+package:
+  patterns:
+    - '!./**'
+    - './main'
+    - './web/dist/**'
+
+functions:
+  api:
+    handler: main
+    events:
+      - httpApi:
+          path: '/{proxy+}'
+          method: '*'
+          cors:
+            origin: '*'
+            headers:
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
+
+plugins:
+  - serverless-go-plugin
+
+custom:
+  go:
+    binDir: bin
+    cgo: 0
+    buildTags: lambda

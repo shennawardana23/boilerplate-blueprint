@@ -1,0 +1,9 @@
+{
+  "outputStyle": "concise",
+  "alwaysShowLineNumbers": true,
+  "codeStyle": "minimal",
+  "followConventions": true,
+  "useProjectContext": true,
+  "defaultTodoEnabled": true,
+  "model": "claude-sonnet-4-20250514"
+}
